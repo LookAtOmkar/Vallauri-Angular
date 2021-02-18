@@ -1,0 +1,19 @@
+.female{
+    background-color:pink;
+    font-style:italic;
+}
+
+.male{
+    background-color:blue;
+    font-style: normal;
+}
+
+.underline{
+    text-decoration: underline;
+    font-weight:bold;
+}
+
+
+.color{
+    color:white;
+}

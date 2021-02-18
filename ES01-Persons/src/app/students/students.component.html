@@ -1,4 +1,15 @@
-<p *ngFor="let student of students">
+<!--<p [ngStyle]="{backgroundColor: student.gender=='F' ? 'pink' : 'cyan' , text-decoration: student.presence=='Absent'? 'italia':'normal'}">
+    I'm {{student.name}},
+    my City is {{student.city}}, 
+    and my gender is {{student.Gender}}
+</p>
+-->
+
+<p class="color" [ngClass]="{
+    'female': student.gender=='F',
+ 'male': student.gender=='M',
+ 'underlined': student.presence=='Absent'}" >
+
     I'm {{student.name}},
     my City is {{student.city}}, 
     and my gender is {{student.Gender}}

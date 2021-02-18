@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsComponent implements OnInit {
 
-  students = [
+  students: any[] = [
     { "name":"Pippo","city":"Fossano","Gender":"M"},
     { "name":"Paolo","city":"Fossano","Gender":"M"},
     { "name":"Pietro","city":"Fossano","Gender":"M"},
@@ -22,12 +22,19 @@ export class StudentsComponent implements OnInit {
     { "name":"Roberto","city":"Novara","Gender":"M"},
   ] 
 
+  student: any;
 
   constructor() {
-    
-
+    let n = this.random(0, this.students.length-1);
+    this.student = this.students[n];
+    let status = this.random(0,1);
+    this.student.presence = status==0 ? "Absent":"Present";
 
    }
+
+  random(a,b){
+    return (Math.floor((b-a+1)*Math.random())+a);
+  } 
 
   ngOnInit(): void {
   }
