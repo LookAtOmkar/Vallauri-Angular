@@ -1,0 +1,6 @@
+<label for= "studentName">Student's name : </label>
+<input type="text"  id="studentName">
+<br>
+<button id="btnAdd" (click)="OnCreateStudent()">Add Student</button>
+<br>
+<app-student *ngFor="let item of students"></app-student>
