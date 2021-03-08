@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentsComponent{
   students: string[]= []; //vettore vuoto 
+  studentName:string = "";
+  isCreated:boolean = false;
   constructor() {
 
 
@@ -14,6 +16,10 @@ export class StudentsComponent{
   
   OnCreateStudent(){
     this.students.push("");
+  }
+
+  onTextChanged(){
+    this.isCreated = true;
   }
 
   random(a, b){

@@ -1,6 +1,19 @@
 <label for= "studentName">Student's name : </label>
-<input type="text"  id="studentName">
+<input type="text"  id="studentName"  [(ngModel)]="studentName" onchange="onTextChanged">
 <br>
-<button id="btnAdd" (click)="OnCreateStudent()">Add Student</button>
+<button id="btnAdd" [disabled]="studentName==''" (click)="OnCreateStudent()">Add Student</button>
 <br>
-<app-student *ngFor="let item of students"></app-student>
+
+<p *ngIf="isCreated; else noStudent">
+    Student created. Student's name is {{studentName}}
+</p>
+
+<ng-template #noStudent>
+    <p>
+        Press ADD to create a new student
+    </p>
+</ng-template>
+
+
+
+<app-student *ngFor="let item of students" [newStudent]="studentName"></app-student>

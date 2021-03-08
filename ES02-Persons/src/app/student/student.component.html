@@ -1,1 +1,4 @@
-<p>Hi ,I am  {{student.name}} and i'm {{student.presence}} </p>
+<p [ngClass]="{'green':student.presence=='Present',
+'red':student.presence=='Absent'}">
+    Hi ,I am  {{student.name}} and i'm {{student.presence}}
+ </p>
