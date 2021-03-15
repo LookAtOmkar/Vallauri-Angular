@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { IngredientModel } from 'src/app/models/ingredient.model';
+import { ShoppingListService } from '../shopping-list.service';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -13,11 +14,13 @@ export class ShoppingEditComponent implements OnInit {
 
   @Output() ingredientAdded = new EventEmitter<IngredientModel>();
 
-  constructor() { }
+  constructor(public shoppingListService:ShoppingListService) { }
 
   addIngredient() {
     console.log(this.ingredientName + "-" + this.ingredientAmount);
-    this.ingredientAdded.emit(new IngredientModel(this.ingredientName, this.ingredientAmount));
+    const newIngredient:IngredientModel =new IngredientModel(this.ingredientName, this.ingredientAmount);
+    //this.ingredientAdded.emit(newIngredient);
+    this.shoppingListService.addIngredient(newIngredient);
   }
 
   onInputChanged() {

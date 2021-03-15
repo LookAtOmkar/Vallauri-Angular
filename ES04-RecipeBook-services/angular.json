@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ES04-RecipeBook-services": {
+    "ES04-RecipeBook-Services": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ES04-RecipeBook-services",
+            "outputPath": "dist/ES04-RecipeBook-Services",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,12 +24,9 @@
               "src/assets"
             ],
             "styles": [
-				      "node_modules/bootstrap/dist/css/bootstrap.css",
-				       "src/styles.css"
+              "src/styles.css"
             ],
-            "scripts": [
-				      "node_modules/bootstrap/dist/js/bootstrap.min.js"
-		      	]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ES04-RecipeBook-services:build"
+            "browserTarget": "ES04-RecipeBook-Services:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ES04-RecipeBook-services:build:production"
+              "browserTarget": "ES04-RecipeBook-Services:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ES04-RecipeBook-services:build"
+            "browserTarget": "ES04-RecipeBook-Services:build"
           }
         },
         "test": {
@@ -90,9 +87,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         },
         "lint": {
@@ -112,16 +112,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ES04-RecipeBook-services:serve"
+            "devServerTarget": "ES04-RecipeBook-Services:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ES04-RecipeBook-services:serve:production"
+              "devServerTarget": "ES04-RecipeBook-Services:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ES04-RecipeBook-services"
+  "defaultProject": "ES04-RecipeBook-Services"
 }

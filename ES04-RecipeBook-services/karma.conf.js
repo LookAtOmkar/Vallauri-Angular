@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/ES04-RecipeBook-services'),
+      dir: require('path').join(__dirname, './coverage/ES04-RecipeBook-Services'),
       subdir: '.',
       reporters: [
         { type: 'html' },

@@ -1,6 +1,8 @@
 import { Injectable, OnInit } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
 import { RecipeModel } from '../models/recipe.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
+import { IngredientModel } from '../models/ingredient.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +11,19 @@ export class RecipeService implements OnInit {
   recipes: RecipeModel[];
   selectedRecipe: RecipeModel;
   
-  constructor(private dataStorageService:  DataStorageService) { }
+  constructor(private dataStorageService:  DataStorageService,
+              private shoppingListService:ShoppingListService) { 
+    this.getRecipes();
+    
+  }
 
 
   ngOnInit(): void{}
+
+  addIngredientsToShoppingList(ingredients: IngredientModel[]){
+    this.shoppingListService.addIngredients(ingredients);
+  }
+
 
   getRecipes(){  
     /*subscibe() si aspetta come paametro due funzioni, una di ok, e una di errore
@@ -62,5 +73,7 @@ export class RecipeService implements OnInit {
     /*********************************************************************************************************/
 
 
+
+    
   }
 }

@@ -3,7 +3,7 @@
         <app-shopping-edit (ingredientAdded)="onIngredientAdded($event)"></app-shopping-edit>
         <hr>
         <ul class="list-group">
-            <a href="#" class="list-group-item" *ngFor="let item of shoppingListService.getIngredients()">
+            <a href="#" class="list-group-item" *ngFor="let item of shoppingListService.ingredients">
                 {{ item.name }} - {{ item.amount }}
             </a>
         </ul>

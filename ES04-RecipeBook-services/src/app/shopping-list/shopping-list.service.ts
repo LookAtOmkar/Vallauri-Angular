@@ -7,7 +7,9 @@ import { DataStorageService } from '../shared/data-storage.service';
 })
 export class ShoppingListService {
   ingredients: IngredientModel[] = [];
-  constructor(private dataStorageService:DataStorageService) { }
+  constructor(private dataStorageService:DataStorageService) {
+    this.getIngredients();
+  }
 
 
   getIngredients(){
@@ -23,6 +25,7 @@ export class ShoppingListService {
      )
   } 
 
+
   
   addIngredient(ingredient:IngredientModel){
     let trovato=false;
@@ -34,7 +37,12 @@ export class ShoppingListService {
       }
     }
     if(!trovato)
+    {
       this.ingredients.push(ingredient);
+      this.postIngredient(ingredient);
+    }
+     
+
 
   }
 
@@ -45,7 +53,21 @@ export class ShoppingListService {
     
 
     for (let item of ingredients) {
-      this.addIngredient(item);  
+      //this.addIngredient(item);  
+      this.postIngredient(item);
     }
   }
+  
+  postIngredient(ingredient:IngredientModel){
+    this.dataStorageService.sendPostRequest('shopping-list',ingredient)
+    .subscribe(
+      (data: any[]) =>{
+        console.log(data);
+      },
+      (error: any)=>{
+        console.log(error);
+      }
+    );
+  }
+  
 }

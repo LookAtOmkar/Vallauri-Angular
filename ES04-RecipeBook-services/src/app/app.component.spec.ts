@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Es04-Recipe-book'`, () => {
+  it(`should have as title 'ES04-RecipeBook-Services'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Es04-Recipe-book');
+    expect(app.title).toEqual('ES04-RecipeBook-Services');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('Es04-Recipe-book app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ES04-RecipeBook-Services app is running!');
   });
 });

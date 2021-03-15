@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', async () => {
     await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('ES04-RecipeBook-services app is running!');
+    expect(await page.getTitleText()).toEqual('ES04-RecipeBook-Services app is running!');
   });
 
   afterEach(async () => {

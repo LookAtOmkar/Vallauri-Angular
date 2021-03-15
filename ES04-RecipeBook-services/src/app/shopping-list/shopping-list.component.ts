@@ -15,6 +15,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.shoppingListService.getIngredients();
   }
 
 }
