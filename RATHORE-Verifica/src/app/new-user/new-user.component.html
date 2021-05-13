@@ -1,0 +1,48 @@
+<div class="card right">
+    <h4>Inserimento di un nuovo utente</h4>
+    <div class="col-sm-5 form-group">
+        <label for="Title">Name Title</label>
+        <input id="Title" type="text" class="form-control" ([(ngModel)]="Title" (input)="onInputChanged()">
+    </div>
+    <div class="col-sm-5 form-group">
+        <label for="First">Name First</label>
+        <input id="First" type="text" class="form-control" ([([(ngModel)]="First")]) (input)="onInputChanged()">
+    </div>
+    <div class="col-sm-5 form-group">
+        <label for="Last">Name Last</label>
+        <input id="Last" type="text" class="form-control" ([(ngModel)]="Last" (input)="onInputChanged()">
+    </div>
+    <div class="col-sm-5 form-group">
+        <label for="Gender">Gender</label>
+        <input id="Gender" type="text" class="form-control" ([(ngModel)]="Gender" (input)="onInputChanged()">
+    </div>
+    <div class="col-sm-5 form-group">
+        <label for="nat">nat</label>
+        <input id="nat" type="text" class="form-control" ([(ngModel)]="nat" (input)="onInputChanged()">
+    </div>
+    <div class="col-sm-5 form-group">
+        <label for="Cell">cell</label>
+        <input id="Cell" type="text" class="form-control" ([(ngModel)]="Cell" (input)="onInputChanged()">
+    </div>
+    <div class="col-sm-5 form-group">
+        <label for="phone">phone</label>
+        <input id="phone" type="text" class="form-control" ([(ngModel)]="phone" (input)="onInputChanged()">
+    </div>
+    <div class="col-sm-5 form-group">
+        <label for="Age">dob.age</label>
+        <input id="Age" type="text" class="form-control" ([(ngModel)]="Age" (input)="onInputChanged()">
+    </div>
+        <div class="col-sm-5 form-group">
+        <label for="imgPath">Image Path</label>
+        <input id="imgPath" type="text" class="form-control" ([(ngModel)]="imgPath" (input)="onInputChanged()">
+    </div>
+    <div class="col-sm-5 ">
+        <img src="src\verifica randomuser\user.png"/>
+    </div>
+
+    <div class="row">   
+        <div class="col-xs-12">
+            <button class="btn btn-success" type="button" [disabled]="isEmpty" (click)="AddUser()">SALVA</button>
+        </div>
+    </div>
+</div>

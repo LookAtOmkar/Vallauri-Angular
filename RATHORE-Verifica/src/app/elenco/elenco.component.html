@@ -1,0 +1,9 @@
+<div class="left">
+    <button class="btn primary" (click)="AddUser()">ADD NEW USERS</button>
+        <div class="row" *ngFor="let item of usersList" (click)="GetDetails(item.login.uuid)">
+            <img src="{{item.picture.thumbnail}}">
+            <span style="font-weight: bold;" [ngStyle]="{'color':item.gender=='male' ? 'blue':'red'}"
+                [ngClass]="{'DE':item.nat=='DE'}">{{item.name.title}} {{item.name.first}} {{item.name.last}}    {{item.nat}}
+            </span> 
+        </div>
+</div>
